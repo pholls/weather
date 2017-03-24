@@ -6,9 +6,7 @@ The app is deployed on Heroku [here](https://weathrcheckr.herokuapp.com/).
 
 ## Technologies
 
-WeathrCheckr was built using Rails 5.
-
-It uses the [Aeris Weather API](https://www.aerisweather.com/support/docs/api/) to retrieve the 7-day forecast for the provided zip code.
+WeathrCheckr was built using Rails 5. It uses the [Aeris Weather API](https://www.aerisweather.com/support/docs/api/) to retrieve the 7-day forecast for the provided zip code.
 
 ### To Run This App Locally
 
@@ -22,7 +20,7 @@ It uses the [Aeris Weather API](https://www.aerisweather.com/support/docs/api/) 
 
 #### Future Goals
 
-Given more time, there are a few things I would have liked to improve upon.
+This was a timed coding challenge. After 3 hours, I submitted what I had. Given more time, there are several things I would have liked to improve upon.
 
 * Styling
     * displaying the daily forecasts in a nice grid

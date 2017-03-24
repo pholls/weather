@@ -6,11 +6,21 @@ The app is deployed on Heroku [here](https://weathrcheckr.herokuapp.com/).
 
 ## Technologies
 
-WeathrCheckr uses the [Aeris Weather API](https://www.aerisweather.com/support/docs/api/) to retrieve the 7-day forecast for the provided zip code.
-
 WeathrCheckr was built using Rails 5.
 
-### Future Goals
+It uses the [Aeris Weather API](https://www.aerisweather.com/support/docs/api/) to retrieve the 7-day forecast for the provided zip code.
+
+### To Run This App Locally
+
+* clone [this repo](https://github.com/pholls/weather.git)
+* navigate to the directory
+* `bundle install`
+* install dependencies
+* `bin/rails s`
+* start the rails server
+* navigate to localhost:3000 in a web browser
+
+#### Future Goals
 
 Given more time, there are a few things I would have liked to improve upon.
 
@@ -21,15 +31,15 @@ Given more time, there are a few things I would have liked to improve upon.
 * Icons
     * display a relevant picture of the weather forecast
 * Not hard-coding the API key
-* look up location by zip code
+* Display location name
     * display "Weather for [AREA NAME]" instead of zip code on forecast page
-
-#### Run the App Locally
-
-* clone [this repo](https://github.com/pholls/weather.git)
-* navigate to the directory
-* `bundle install`
-    * install dependencies
-* `bin/rails s`
-    * start the rails server
-* navigate to localhost:3000 in a web browser
+* Testing
+    * at this point, this app has 0% test coverage
+    * would like to implement SimpleCov and TravisCI in addition to a full test suite
+* Validations
+    * validations exist at the database level for forecasts, but not within the models
+* Optimization
+    * method to look up city/state name by zip code
+    * helper method to display "Today", "Tomorrow", or the date
+    * parse forecast JSON more efficiently
+    * many more

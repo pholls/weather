@@ -2,7 +2,7 @@
 
 WeathrCheckr provides your 7-day weather forecast by zip code. It was built solo by [Pat Holland](https://github.com/pholls) in 3 hours as a coding challenge.
 
-The app is deployed on Heroku [here](https://weather-checker.herokuapp.com/).
+The app is deployed on Heroku [here](https://weathrcheckr.herokuapp.com/).
 
 ## Technologies
 

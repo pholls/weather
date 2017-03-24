@@ -21,7 +21,19 @@ class PagesController < ApplicationController
 
   def save_forecast(data)
     if data['success']
-      p data['response'][0]
+      data['response'][0]['periods'].each do |forecast|
+        parsed_forecast = {
+          latitude: data['response'][0]['loc']['lat'],
+          longitude: data['response'][0]['loc']['long'],
+          date: forecast['dateTimeISO'][0...10],
+          min_temp_C: forecast['minTempC'],
+          max_temp_C: forecast['maxTempC'],
+          min_temp_F: forecast['minTempF'],
+          max_temp_F: forecast['maxTempF'],
+          description: forecast['weather']
+        }
+        Forecast.create(parsed_forecast)
+      end
       # data['response'][0][]
     end
   end

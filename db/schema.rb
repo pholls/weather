@@ -16,10 +16,9 @@ ActiveRecord::Schema.define(version: 20170324205417) do
   enable_extension "plpgsql"
 
   create_table "forecasts", force: :cascade do |t|
-    t.date     "date",        null: false
+    t.string   "date",        null: false
     t.string   "latitude",    null: false
     t.string   "longitude",   null: false
-    t.string   "location",    null: false
     t.string   "description", null: false
     t.integer  "min_temp_F",  null: false
     t.integer  "min_temp_C",  null: false

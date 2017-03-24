@@ -1,0 +1,11 @@
+<%= form_tag("/search", method: "get") do %>
+  <%= label_tag(:zip, "Enter zip code to find weather:") %>
+  <%= text_field_tag(:zip) %>
+
+  <%= radio_button_tag(:scale, "Farenheit", checked: true) %>
+  <%= label_tag(:scale_F, "Farenheit") %>
+  <%= radio_button_tag(:scale, "Celsius") %>
+  <%= label_tag(:scale_C, "Celsius") %>
+
+  <%= submit_tag("show me the weather") %>
+<% end %>

@@ -4,8 +4,13 @@
 <% Forecast.get_last_seven(params['zip']).each_with_index do |report, index| %>
   <div class='forecast' id='forecast-<%= index %>'>
     <ul>
-      <li></li>
-      <li><%= Date.parse(report.date).strftime('Weather report for %A, %B %-d') %></li>
+      <% if index == 0 %>
+        <li class='date'>Today</li>
+      <% elsif index == 1 %>
+        <li class='date'>Tomorrow</li>
+      <% else %>
+        <li class='date'><%= Date.parse(report.date).strftime('%A, %B %-d') %></li>
+      <% end %>
       <li><%= report.description.capitalize %></li>
       <% if params['scale'] == 'Farenheit' %>
         <li>High: <%= report.max_temp_F %>ºF</li>

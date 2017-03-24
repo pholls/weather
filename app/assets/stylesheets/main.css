@@ -1,0 +1,19 @@
+body {
+  font-family: Futura;
+}
+
+li {
+  list-style: none;
+  text-align: left;
+}
+
+.forecast {
+  border: 1px solid gray;
+  display: inline-block;
+  width: 180px;
+  height: 140px;
+}
+
+.date {
+  font-weight: bold;
+}

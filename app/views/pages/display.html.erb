@@ -1,22 +1,9 @@
 <h1>Weather for Zip Code <%=params['zip']%></h1>
 
 <!-- Display weather and location -->
-<div class='current'>
-  Today
-</div>
-<div class='forecast' id='forecast-1'>
-  Tomorrow
-</div>
-<div class='forecast' id='forecast-2'>
-  <%= %>
-</div>
-<div class='forecast' id='forecast-3'>
-</div>
-<div class='forecast' id='forecast-4'>
-</div>
-<div class='forecast' id='forecast-5'>
-</div>
-<div class='forecast' id='forecast-6'>
-</div>
+<% Forecast.get_last_seven(params['zip']).each do |report| %>
+  <div>
+  </div>
+<% end %>
 
 <%= link_to 'home', root_path %>

@@ -10,7 +10,7 @@ WeathrCheckr was built using Rails 5. It uses the [Aeris Weather API](https://ww
 
 ### To Run This App Locally
 
-* clone [this repo](https://github.com/pholls/weather.git)
+* clone [this repo](https://github.com/pholls/weathrcheckr.git)
 * navigate to the directory
 * `bundle install`
 * install dependencies
@@ -41,3 +41,5 @@ This was a timed coding challenge. After 3 hours, I submitted what I had. Given 
     * helper method to display "Today", "Tomorrow", or the date
     * parse forecast JSON more efficiently
     * many more
+ * AJAX
+    * create a button to switch Farenheit and Celsius on the forecasts page

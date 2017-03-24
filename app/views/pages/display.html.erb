@@ -1,10 +1,5 @@
-<!-- Form to enter zip code for weather -->
-<!-- Make this a partial! -->
-<%= form_tag("/search", method: "get") do %>
-  <%= label_tag(:zip, "Enter zip code to find weather:") %>
-  <%= text_field_tag(:zip) %>
-  <%= submit_tag("show me the weather") %>
-<% end %>
+<h1>Display results here</h1>
+<h2>Weather for <%=params['zip']%></h2>
 
 <!-- Display weather and location -->
 <div class='current'>

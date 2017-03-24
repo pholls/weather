@@ -6,7 +6,6 @@ class PagesController < ApplicationController
   def search
     zip = params['zip']
     get_forecast(zip)
-    # save to DB
     render :display
   end
 
@@ -16,15 +15,14 @@ class PagesController < ApplicationController
     url = "http://api.aerisapi.com/forecasts/#{zip}?client_id=5WmX72QplQE5kV8LGudPr&client_secret=vKRvWOc4QGplORW8VZ60WMMRemrJNvSaFnxNjbKt"
     buffer = open(url, "UserAgent" => "Ruby-Wget").read
     response = JSON.parse(buffer)
-    save_forecast(response)
+    save_forecast(response, zip)
   end
 
-  def save_forecast(data)
+  def save_forecast(data, zip)
     if data['success']
       data['response'][0]['periods'].each do |forecast|
         parsed_forecast = {
-          latitude: data['response'][0]['loc']['lat'],
-          longitude: data['response'][0]['loc']['long'],
+          zip: zip,
           date: forecast['dateTimeISO'][0...10],
           min_temp_C: forecast['minTempC'],
           max_temp_C: forecast['maxTempC'],
@@ -34,7 +32,6 @@ class PagesController < ApplicationController
         }
         Forecast.create(parsed_forecast)
       end
-      # data['response'][0][]
     end
   end
 end

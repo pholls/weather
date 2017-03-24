@@ -1,12 +1,14 @@
-<h1>Display results here</h1>
-<h2>Weather for <%=params['zip']%></h2>
+<h1>Weather for Zip Code <%=params['zip']%></h1>
 
 <!-- Display weather and location -->
 <div class='current'>
+  Today
 </div>
 <div class='forecast' id='forecast-1'>
+  Tomorrow
 </div>
 <div class='forecast' id='forecast-2'>
+  <%= %>
 </div>
 <div class='forecast' id='forecast-3'>
 </div>
@@ -16,3 +18,5 @@
 </div>
 <div class='forecast' id='forecast-6'>
 </div>
+
+<%= link_to 'home', root_path %>

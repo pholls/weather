@@ -1,8 +1,11 @@
 <h1>Weather for Zip Code <%=params['zip']%></h1>
 
 <!-- Display weather and location -->
-<% Forecast.get_last_seven(params['zip']).each do |report| %>
-  <div>
+<% Forecast.get_last_seven(params['zip']).each_with_index do |report, index| %>
+  <div class='forecast' id='forecast-<%= index %>'>
+    <ul>
+      <li>Low: <%= report.min_temp_F %> degrees F</li>
+    </ul>
   </div>
 <% end %>
 

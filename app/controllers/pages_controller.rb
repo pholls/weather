@@ -5,7 +5,9 @@ class PagesController < ApplicationController
 
   def search
     # make the API call
-    # save to DB?
+    url = "http://api.aerisapi.com/forecasts/#{params['zip']}?client_id=5WmX72QplQE5kV8LGudPr&client_secret=vKRvWOc4QGplORW8VZ60WMMRemrJNvSaFnxNjbKt"
+    puts url
+    # save to DB
     render :display
   end
 end

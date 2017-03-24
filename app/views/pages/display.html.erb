@@ -1,0 +1,29 @@
+<h1>Weather for Zip Code <%=params['zip']%></h1>
+
+<!-- Display weather and location -->
+<% Forecast.get_last_seven(params['zip']).each_with_index do |report, index| %>
+  <div class='forecast' id='forecast-<%= index %>'>
+    <ul>
+      <% if index == 0 %>
+        <li class='date'>Today</li>
+      <% elsif index == 1 %>
+        <li class='date'>Tomorrow</li>
+      <% else %>
+        <li class='date'><%= Date.parse(report.date).strftime('%A, %B %-d') %></li>
+      <% end %>
+      <li><%= report.description.capitalize %></li>
+      <% if params['scale'] == 'Farenheit' %>
+        <li>High: <%= report.max_temp_F %>ºF</li>
+        <li>Low: <%= report.min_temp_F %>ºF</li>
+      <% else %>
+        <li>High: <%= report.max_temp_C %>ºC</li>
+        <li>Low: <%= report.min_temp_C %>ºC</li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<h2>Search again?</h2>
+<%= render 'search_form' %>
+
+<%= link_to 'home', root_path %>

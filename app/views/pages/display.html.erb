@@ -4,7 +4,16 @@
 <% Forecast.get_last_seven(params['zip']).each_with_index do |report, index| %>
   <div class='forecast' id='forecast-<%= index %>'>
     <ul>
-      <li>Low: <%= report.min_temp_F %> degrees F</li>
+      <li></li>
+      <li><%= Date.parse(report.date).strftime('Weather report for %A, %B %-d') %></li>
+      <li><%= report.description.capitalize %></li>
+      <% if params['scale'] == 'Farenheit' %>
+        <li>High: <%= report.max_temp_F %>ºF</li>
+        <li>Low: <%= report.min_temp_F %>ºF</li>
+      <% else %>
+        <li>High: <%= report.max_temp_C %>ºC</li>
+        <li>Low: <%= report.min_temp_C %>ºC</li>
+      <% end %>
     </ul>
   </div>
 <% end %>

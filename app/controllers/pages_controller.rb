@@ -30,7 +30,7 @@ class PagesController < ApplicationController
           max_temp_F: forecast['maxTempF'],
           description: forecast['weather']
         }
-        Forecast.create(parsed_forecast)
+        Forecast.find_or_create_by(parsed_forecast)
       end
     end
   end

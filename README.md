@@ -8,7 +8,7 @@ The app is deployed on Heroku [here](https://weathrcheckr.herokuapp.com/).
 
 WeathrCheckr was built using Rails 5. It uses the [Aeris Weather API](https://www.aerisweather.com/support/docs/api/) to retrieve the 7-day forecast for the provided zip code.
 
-### To Run This App Locally
+## To Run This App Locally
 
 * clone [this repo](https://github.com/pholls/weathrcheckr.git)
 * navigate to the directory
@@ -18,7 +18,7 @@ WeathrCheckr was built using Rails 5. It uses the [Aeris Weather API](https://ww
 * start the rails server
 * navigate to localhost:3000 in a web browser
 
-#### Future Goals
+## Future Goals
 
 This was a timed coding challenge. After 3 hours, I submitted what I had. Given more time, there are several things I would have liked to improve upon.
 
@@ -40,6 +40,7 @@ This was a timed coding challenge. After 3 hours, I submitted what I had. Given 
     * method to look up city/state name by zip code
     * helper method to display "Today", "Tomorrow", or the date
     * parse forecast JSON more efficiently
+    * don't make a call to the API every time a forecast is requested unless it is needed (check the database first, then fill in the missing data with an API call)
     * many more
- * AJAX
+* AJAX
     * create a button to switch Farenheit and Celsius on the forecasts page

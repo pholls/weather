@@ -18,7 +18,7 @@ WeathrCheckr was built using Rails 5. It uses the [Aeris Weather API](https://ww
 * start the rails server
 * navigate to localhost:3000 in a web browser
 
-## Future Goals
+## Missing Components
 
 This was a timed coding challenge. After 3 hours, I submitted what I had. Given more time, there are several things I would have liked to improve upon.
 
